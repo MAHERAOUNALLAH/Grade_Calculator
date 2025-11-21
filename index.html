@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISITCOM Sousse - Calculateur de Moyennes - Semestre 3 LM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>ISITCOM Sousse</h1>
+            </div>
+            <div class="header-content">
+                <h2>Calculateur de Moyennes </h2>
+                <p>Licence en Science de l'Informatique - Saisie et calcul des notes</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Student Info Section -->
+            <section class="card student-info">
+                <h3><i class="fas fa-user-graduate"></i> Informations de l'étudiant</h3>
+                <div class="student-input">
+                    <div class="form-group">
+                        <label for="student-name">Nom :</label>
+                        <input type="text" id="student-name" class="form-control" placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-firstname">Prénom :</label>
+                        <input type="text" id="student-firstname" class="form-control" placeholder="Votre prénom">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-email">Email :</label>
+                        <input type="email" id="student-email" class="form-control" placeholder="votre.email@isitcom.u-sousse.tn">
+                    </div>
+                </div>
+                <button id="save-student-btn" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Enregistrer mes informations
+                </button>
+            </section>
+
+            <!-- Grade Input Section -->
+            <section class="card grade-input">
+                <h3><i class="fas fa-edit"></i> Saisie des notes par ECUE</h3>
+                <p class="section-description">Saisissez vos notes pour chaque ECUE du semestre</p>
+                
+                <div class="ue-sections">
+                    <!-- UEF310 : Probabilité -->
+                    <div class="ue-section">
+                        <h4 class="ue-title">UEF310 - Probabilité (Crédit: 4)</h4>
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEF311 – Probabilité et statistique (Coeff: 2)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uef311-cc">CC :</label>
+                                    <input type="number" id="uef311-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef311-tp">TP :</label>
+                                    <input type="number" id="uef311-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef311-exam">Examen :</label>
+                                    <input type="number" id="uef311-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uef311-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UEF320 : Automates et Optimisation -->
+                    <div class="ue-section">
+                        <h4 class="ue-title">UEF320 - Automates et Optimisation (Crédit: 4)</h4>
+                        
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEF321 – Théorie des langages et des Automates (Coeff: 1)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uef321-cc">CC :</label>
+                                    <input type="number" id="uef321-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef321-tp">TP :</label>
+                                    <input type="number" id="uef321-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef321-exam">Examen :</label>
+                                    <input type="number" id="uef321-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uef321-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEF322 – Graphes et optimisation (Coeff: 1)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uef322-cc">CC :</label>
+                                    <input type="number" id="uef322-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef322-tp">TP :</label>
+                                    <input type="number" id="uef322-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef322-exam">Examen :</label>
+                                    <input type="number" id="uef322-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uef322-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UEF330 : CPOO -->
+                    <div class="ue-section">
+                        <h4 class="ue-title">UEF330 - CPOO (Crédit: 7)</h4>
+                        
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEF331 – Conception des Systèmes d'Information (Coeff: 1.5)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uef331-cc">CC :</label>
+                                    <input type="number" id="uef331-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef331-tp">TP :</label>
+                                    <input type="number" id="uef331-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef331-exam">Examen :</label>
+                                    <input type="number" id="uef331-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uef331-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEF332 – Programmation Java (Coeff: 2)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uef332-cc">CC :</label>
+                                    <input type="number" id="uef332-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef332-tp">TP :</label>
+                                    <input type="number" id="uef332-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef332-exam">Examen :</label>
+                                    <input type="number" id="uef332-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uef332-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UEF340 : Bases de données et Réseaux -->
+                    <div class="ue-section">
+                        <h4 class="ue-title">UEF340 - Bases de données et Réseaux (Crédit: 5)</h4>
+                        
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEF341 – Ingénierie des Bases de Données (Coeff: 1.5)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uef341-cc">CC :</label>
+                                    <input type="number" id="uef341-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef341-tp">TP :</label>
+                                    <input type="number" id="uef341-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef341-exam">Examen :</label>
+                                    <input type="number" id="uef341-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uef341-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEF342 – Services des Réseaux (Coeff: 1)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uef342-cc">CC :</label>
+                                    <input type="number" id="uef342-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef342-tp">TP :</label>
+                                    <input type="number" id="uef342-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uef342-exam">Examen :</label>
+                                    <input type="number" id="uef342-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uef342-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UET310 : Langue et Culture d'Entreprise -->
+                    <div class="ue-section">
+                        <h4 class="ue-title">UET310 - Langue et Culture d'Entreprise (Crédit: 4)</h4>
+                        
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUET311 – Anglais 3 (Coeff: 1)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uet311-cc">CC :</label>
+                                    <input type="number" id="uet311-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uet311-tp">TP :</label>
+                                    <input type="number" id="uet311-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uet311-exam">Examen :</label>
+                                    <input type="number" id="uet311-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uet311-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUET312 – Gestion d'entreprise (Coeff: 1)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="uet312-cc">CC :</label>
+                                    <input type="number" id="uet312-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uet312-tp">TP :</label>
+                                    <input type="number" id="uet312-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uet312-exam">Examen :</label>
+                                    <input type="number" id="uet312-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="uet312-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UEO310 : Unité optionnelle -->
+                    <div class="ue-section">
+                        <h4 class="ue-title">UEO310 - Unité optionnelle (Crédit: 6)</h4>
+                        
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEO311 – Génie Logiciel (Coeff: 1.5)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="ueo311-cc">CC :</label>
+                                    <input type="number" id="ueo311-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ueo311-tp">TP :</label>
+                                    <input type="number" id="ueo311-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ueo311-exam">Examen :</label>
+                                    <input type="number" id="ueo311-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="ueo311-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="eceue-input">
+                            <div class="eceue-header">
+                                <span class="eceue-name">ECUEO312 – Design Graphique (Coeff: 1.5)</span>
+                            </div>
+                            <div class="grade-inputs">
+                                <div class="form-group">
+                                    <label for="ueo312-cc">CC :</label>
+                                    <input type="number" id="ueo312-cc" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ueo312-tp">TP :</label>
+                                    <input type="number" id="ueo312-tp" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ueo312-exam">Examen :</label>
+                                    <input type="number" id="ueo312-exam" class="grade-input" min="0" max="20" step="0.01" placeholder="0-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Moyenne :</label>
+                                    <span id="ueo312-average" class="grade-result">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button id="calculate-all-btn" class="btn btn-primary">
+                        <i class="fas fa-calculator"></i> Calculer toutes les moyennes
+                    </button>
+                    <button id="save-all-btn" class="btn btn-success">
+                        <i class="fas fa-save"></i> Sauvegarder toutes mes notes
+                    </button>
+                    <button id="reset-btn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Réinitialiser
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card results-section">
+                <h3><i class="fas fa-chart-line"></i> Résultats du semestre</h3>
+                
+                <div class="results-tabs">
+                    <button class="tab-btn active" data-tab="ue-tab">Par UE</button>
+                    <button class="tab-btn" data-tab="semester-tab">Semestre</button>
+                    <button class="tab-btn" data-tab="details-tab">Détails des calculs</button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- UE Results -->
+                    <div id="ue-tab" class="tab-pane active">
+                        <div class="ue-results" id="ue-results">
+                            <!-- Les résultats par UE seront générés dynamiquement ici -->
+                            <div class="no-data">Saisissez vos notes et cliquez sur "Calculer toutes les moyennes"</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Semester Results -->
+                    <div id="semester-tab" class="tab-pane">
+                        <div class="semester-result" id="semester-result">
+                            <div class="no-data">Saisissez vos notes et cliquez sur "Calculer toutes les moyennes"</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Details -->
+                    <div id="details-tab" class="tab-pane">
+                        <div class="calculation-details" id="calculation-details">
+                            <div class="no-data">Saisissez vos notes et cliquez sur "Calculer toutes les moyennes"</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ISITCOM Sousse - Calculateur de Moyennes Semestre 1 2LM</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
